@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "phone_header.h": "c",
+        "stat.h": "c"
+    }
+}
