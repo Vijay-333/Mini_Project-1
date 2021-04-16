@@ -41,7 +41,7 @@ int Delete_record()
         else
         {
             printf("\nEnter NAME:");
-            fgets( name, 20, stdin);
+            scanf("%19s",name);
 
             while( fread( &struct_ptr, sizeof(struct_ptr), 1, f_ptr1) == 1)
             {
@@ -69,8 +69,9 @@ int Delete_record()
             }
 	    }
     }
+    getc(stdin);
     printf("\n Enter any key to Menu:");
-	getchar();
+	getc(stdin);
 
     return 1;
 }

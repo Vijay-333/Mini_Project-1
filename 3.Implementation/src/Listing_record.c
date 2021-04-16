@@ -30,14 +30,15 @@ int Listing_record()
         {
             printf("\nRECORD:\n");
             printf("\nName=%s\nAdress=%s\nFather name=%s\nMother name=%s\nMobile no=%ld\n\nSex=%s\nCountry Code=%d\n",struct_ptr.name,struct_ptr.address,struct_ptr.father_name,struct_ptr.mother_name,struct_ptr.mobile_no,struct_ptr.sex,struct_ptr.country_code);
+            getc(stdin);
         }
 
         fclose(f_ptr);
 
         printf("\nEnd of the LIST.");
+        getc(stdin);
         printf("\nEnter any Key to Menu:");
-        getchar();
-
+        
         return 1;    
     }
 }

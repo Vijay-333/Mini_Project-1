@@ -12,6 +12,7 @@ int test_address(char address[50])
             {
                 return 0;
             }
+        }
     }
     return 1;
 }
