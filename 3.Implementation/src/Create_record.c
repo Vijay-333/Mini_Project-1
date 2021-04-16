@@ -10,6 +10,7 @@
  */
 #include "Phone_Header.h"
 #include "Test_Header.h"
+#include <stdio.h>
 
 int Create_record()
 {
@@ -19,68 +20,41 @@ int Create_record()
     f_ptr = fopen("Data_base.txt","ab+");
 
     printf("\nEnter name: ");
-    scanf("%[^\n]19s",struct_ptr.name);
-    if( !(test_name(struct_ptr.name)))
-    {
-        fclose(f_ptr);
-        return 0;
-    }
+    scanf("%s",struct_ptr.name);
+    
 
     printf("\nEnter the address: ");
-    scanf("%[^\n]49s",struct_ptr.address);
-    if( !(test_address(struct_ptr.address)))
-    {
-        fclose(f_ptr);
-        return 0;
-    }
+    scanf("%49s",struct_ptr.address);
+
 
     printf("\nEnter father name: ");
-    scanf("%[^\n]19s",struct_ptr.father_name);
-    if( !test_name(struct_ptr.father_name))
-    {
-        fclose(f_ptr);
-        return 0;
-    }
+    scanf("%19s",struct_ptr.father_name);
+    
 
     printf("\nEnter mother name: ");
-    scanf("%[^\n]19s",struct_ptr.mother_name);;
-    if( !test_name(struct_ptr.mother_name))
-    {
-        fclose(f_ptr);
-        return 0;
-    }
+    scanf("%19s",struct_ptr.mother_name);;
+    
 
     printf("\nEnter sex(Male, Female, Other): ");
-    scanf("%[^\n]7s",struct_ptr.sex);
-    if( !test_sex(struct_ptr.sex))
-    {
-        fclose(f_ptr);
-        return 0;
-    }
+    scanf("%7s",struct_ptr.sex);
+    
 
     printf("\nEnter mobile no.: ");
     scanf("%ld", &struct_ptr.mobile_no);
-    if( !test_mobile(struct_ptr.mobile_no))
-    {
-        fclose(f_ptr);
-        return 0;
-    };
+    
 
     printf("\nEnter country code: ");
     scanf("%d", &struct_ptr.country_code);
-    if( !test_country_code(struct_ptr.country_code))
-    {
-        fclose(f_ptr);
-        return 0;
-    }
+    
     
     fwrite( &struct_ptr, sizeof(struct_ptr), 1, f_ptr);
     
     printf("\nRecord Saved.");
     fclose(f_ptr);
 
+    getc(stdin);
     printf("\nEnter any Key to Menu:");
-    getchar();
+    getc(stdin);
 
     return 1;
 }

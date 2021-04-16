@@ -27,77 +27,43 @@ int Modify_record()
         fclose(f_ptr);
         return 0;
     }
-
-    else if(!(ftell(f_ptr)))
-    {
-        printf("\nEmpty file.");
-        fclose(f_ptr);
-        return 0;
-    }
     
     else
     {
         printf("\nEnter the NAME to MODIFY: ");
-        fgets( name, 20, stdin);
+        scanf("%19s",name);
+
         while( fread( &struct_ptr, sizeof(struct_ptr), 1, f_ptr) == 1)
         {
             if( strcmp( name, struct_ptr.name) == 0)
             {
                 printf("\nEnter name: ");
-                fgets(new_ptr.name, 20, stdin);
-                if( !test_name(new_ptr.name))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                scanf("%s",new_ptr.name);
+                
 
                 printf("\nEnter the address: ");
-                fgets(new_ptr.address, 50, stdin);
-                if( !test_address(new_ptr.address))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                scanf("%49s",new_ptr.address);
+
 
                 printf("\nEnter father name: ");
-                fgets(new_ptr.father_name, 20, stdin);
-                if( !test_name(new_ptr.father_name))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                scanf("%19s",new_ptr.father_name);
+                
 
                 printf("\nEnter mother name: ");
-                fgets(new_ptr.mother_name, 20, stdin);
-                if( !test_name(new_ptr.mother_name))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                scanf("%19s",new_ptr.mother_name);;
+                
 
                 printf("\nEnter sex(Male, Female, Other): ");
-                fgets(new_ptr.sex, 8, stdin);
-                if( !test_sex(new_ptr.sex))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                scanf("%7s",new_ptr.sex);
+                
 
                 printf("\nEnter mobile no.: ");
                 scanf("%ld", &new_ptr.mobile_no);
-                if( !test_mobile(new_ptr.mobile_no))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                
 
                 printf("\nEnter country code: ");
                 scanf("%d", &new_ptr.country_code);
-                if( !test_country_code(new_ptr.country_code))
-                {
-                    fclose(f_ptr);
-                    return 0;
-                }
+                
 
                 long int size ;
                 size = (long int)-sizeof(struct_ptr); 
@@ -109,14 +75,14 @@ int Modify_record()
                 break;
             }
         }
-
+        getc(stdin);
         if(!flag)
             printf("\nData is not found.");
         
         fclose(f_ptr);
 	}
 	printf("\nEnter any key to Menu:");
-	getchar();
+	getc(stdin);
 
 	return 1;
 }

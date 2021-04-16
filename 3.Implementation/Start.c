@@ -23,7 +23,9 @@ void Menu()
     printf("\t\tPHONEBOOK\n");
     printf("\t\t  MENU\n");
     printf("1:Create\t2.List   \t3.Search\n4.Modify\t5.Delete\t6.Exit\n");
-    switch(getchar())
+    char option;
+    option = getc(stdin);
+    switch( option )
     {
     case '1': Create_record();
     break;
@@ -40,7 +42,7 @@ void Menu()
     default:
         printf("\nEnter 1 to 6 only");
         printf("\n Enter any key");
-        getchar();
+        getc(stdin);
         Menu();
     }
     Menu();

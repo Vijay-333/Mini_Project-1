@@ -28,25 +28,26 @@ int Search_record()
     else
     {
         printf("\nEnter the Name to be Searched:");
-        fgets( name, 20, stdin);
+        scanf("%19s",name);
 
         while( fread( &struct_ptr, sizeof(struct_ptr), 1, f_ptr) == 1)
         {
             if( strcmp( name, struct_ptr.name) == 0)
             {
-                int flag = 1;
-                printf("\n\tInformation About %s\n:",name);
+                flag = 1;
+                printf("\n\tInformation About %s:\n",name);
                 printf("\naddress:%s\nFather name:%s\nMother name:%s\nMobile no:%ld\nsex:%s\nCountry Code:%d",struct_ptr.address,struct_ptr.father_name,struct_ptr.mother_name,struct_ptr.mobile_no,struct_ptr.sex,struct_ptr.country_code);
             }
         }
-
+        
         if(!flag)
             printf("\nFile not found");
 
         fclose(f_ptr);
 
+        getc(stdin);
         printf("\nEnter any Key to Menu:");
-        getchar();
+        getc(stdin);
 
         return 1;
     }
