@@ -20,7 +20,7 @@ int Create_record()
 
     printf("\nEnter name: ");
     scanf("%[^\n]19s",struct_ptr.name);
-    if( !test_name(struct_ptr.name))
+    if( !(test_name(struct_ptr.name)))
     {
         fclose(f_ptr);
         return 0;
@@ -28,7 +28,7 @@ int Create_record()
 
     printf("\nEnter the address: ");
     scanf("%[^\n]49s",struct_ptr.address);
-    if( !test_address(struct_ptr.address))
+    if( !(test_address(struct_ptr.address)))
     {
         fclose(f_ptr);
         return 0;
@@ -80,7 +80,7 @@ int Create_record()
     fclose(f_ptr);
 
     printf("\nEnter any Key to Menu:");
-    getch();
+    getchar();
 
     return 1;
 }

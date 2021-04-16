@@ -4,14 +4,14 @@ int test_address(char address[50])
 {
     for(int i=0; address[i] != '\0'; i++)
     {
-        if( (int)address[i] != 32 && (int)address[i] != 44 && (int)address[i] != 46)
+        if( address[i] != ' ' && address[i] != ',' && address[i] != '-')
         {
-            if( ( (int)address[i] <= 90 && (int)address[i] >= 65 ) || ( (int)address[i] <= 122 && (int)address[i] >= 97 ));
+            if( ( address[i] <= 'z' && address[i] >= 'a' ) || ( address[i] <= 'Z' && address[i] >= 'A' ))
+                continue;
             else
             {
                 return 0;
             }
-        }
     }
     return 1;
 }

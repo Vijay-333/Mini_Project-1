@@ -36,7 +36,7 @@ int Listing_record()
 
         printf("\nEnd of the LIST.");
         printf("\nEnter any Key to Menu:");
-        getch();
+        getchar();
 
         return 1;    
     }

@@ -4,9 +4,10 @@ int test_name(char name[20])
 {
     for(int i=0; name[i] != '\0'; i++)
     {
-        if( (int)name[i] != 32 && (int)name[i] != 46)
+        if( name[i] != ' ' && name[i] != '.')
         {
-            if( ( (int)name[i] <= 90 && (int)name[i] >= 65 ) || ( (int)name[i] <= 122 && (int)name[i] >= 97 ));
+            if( ( name[i] <= 'z' && name[i] >= 'a' ) || ( name[i] <= 'Z' && name[i] >= 'A' ))
+                continue;
             else
             {
                 return 0;
