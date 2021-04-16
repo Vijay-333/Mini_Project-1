@@ -9,8 +9,7 @@
  * 
  */
 #include "Phone_Header.h"
-#include "Test_Header.h"
-#include <stdio.h>
+
 
 int Create_record()
 {
@@ -18,6 +17,12 @@ int Create_record()
     info struct_ptr;
 
     f_ptr = fopen("Data_base.txt","ab+");
+    if(f_ptr == NULL)
+    {
+        printf("\nEmpty File.");
+        fclose(f_ptr);
+        return 0;
+    }
 
     printf("\nEnter name: ");
     scanf("%s",struct_ptr.name);
