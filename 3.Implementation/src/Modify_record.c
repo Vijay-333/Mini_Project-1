@@ -8,8 +8,9 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include "E:\Study\Mini-Project LTTS\Mini Project in C Phonebook\Implementation\inc\Phone_Header.h"
-#include "E:\Study\Mini-Project LTTS\Mini Project in C Phonebook\Implementation\inc\Test_Header.h"
+#include "Phone_Header.h"
+#include "Test_Header.h"
+
 
 int Modify_record()
 {
@@ -22,11 +23,18 @@ int Modify_record()
     
     if(f_ptr == NULL)
     {
-        printf("\nEmpty File.");
+        printf("\nError in Opening the file.");
         fclose(f_ptr);
         return 0;
     }
 
+    else if(!(ftell(f_ptr)))
+    {
+        printf("\nEmpty file.");
+        fclose(f_ptr);
+        return 0;
+    }
+    
     else
     {
         printf("\nEnter the NAME to MODIFY: ");
@@ -69,7 +77,7 @@ int Modify_record()
 
                 printf("\nEnter sex(Male, Female, Other): ");
                 fgets(new_ptr.sex, 8, stdin);
-                if( !test_name(new_ptr.sex))
+                if( !test_sex(new_ptr.sex))
                 {
                     fclose(f_ptr);
                     return 0;
@@ -77,7 +85,7 @@ int Modify_record()
 
                 printf("\nEnter mobile no.: ");
                 scanf("%ld", &new_ptr.mobile_no);
-                if( !test_name(new_ptr.mobile_no))
+                if( !test_mobile(new_ptr.mobile_no))
                 {
                     fclose(f_ptr);
                     return 0;
@@ -85,13 +93,15 @@ int Modify_record()
 
                 printf("\nEnter country code: ");
                 scanf("%d", &new_ptr.country_code);
-                if( !test_name(new_ptr.country_code))
+                if( !test_country_code(new_ptr.country_code))
                 {
                     fclose(f_ptr);
                     return 0;
                 }
 
-                fseek( f_ptr, -sizeof(struct_ptr), SEEK_CUR);
+                long int size ;
+                size = (long int)-sizeof(struct_ptr); 
+                fseek( f_ptr, size, SEEK_CUR);
                 fwrite( &new_ptr, sizeof(struct_ptr), 1, f_ptr);
 
                 flag = 1;
@@ -106,7 +116,7 @@ int Modify_record()
         fclose(f_ptr);
 	}
 	printf("\nEnter any key to Menu:");
-	getch();
+	getchar();
 
 	return 1;
 }
