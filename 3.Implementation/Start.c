@@ -40,7 +40,7 @@ void Menu()
     default:
         printf("\nEnter 1 to 6 only");
         printf("\n Enter any key");
-        getch();
+        getchar();
         Menu();
     }
     Menu();
