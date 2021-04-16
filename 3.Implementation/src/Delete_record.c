@@ -70,7 +70,7 @@ int Delete_record()
 	    }
     }
     printf("\n Enter any key to Menu:");
-	getch();
+	getchar();
 
     return 1;
 }

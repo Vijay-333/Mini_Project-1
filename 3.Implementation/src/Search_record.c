@@ -46,7 +46,7 @@ int Search_record()
         close(f_ptr);
 
         printf("\nEnter any Key to Menu:");
-        getch();
+        getchar();
 
         return 1;
     }
