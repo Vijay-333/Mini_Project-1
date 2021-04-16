@@ -19,7 +19,7 @@ int Create_record()
     f_ptr = fopen("Data_base.txt","ab+");
 
     printf("\nEnter name: ");
-    fgets(struct_ptr.name, 20, stdin);
+    scanf("%[^\n]19s",struct_ptr.name);
     if( !test_name(struct_ptr.name))
     {
         fclose(f_ptr);
@@ -27,7 +27,7 @@ int Create_record()
     }
 
     printf("\nEnter the address: ");
-    fgets(struct_ptr.address, 50, stdin);
+    scanf("%[^\n]49s",struct_ptr.address);
     if( !test_address(struct_ptr.address))
     {
         fclose(f_ptr);
@@ -35,7 +35,7 @@ int Create_record()
     }
 
     printf("\nEnter father name: ");
-    fgets(struct_ptr.father_name, 20, stdin);
+    scanf("%[^\n]19s",struct_ptr.father_name);
     if( !test_name(struct_ptr.father_name))
     {
         fclose(f_ptr);
@@ -43,7 +43,7 @@ int Create_record()
     }
 
     printf("\nEnter mother name: ");
-    fgets(struct_ptr.mother_name, 20, stdin);
+    scanf("%[^\n]19s",struct_ptr.mother_name);;
     if( !test_name(struct_ptr.mother_name))
     {
         fclose(f_ptr);
@@ -51,7 +51,7 @@ int Create_record()
     }
 
     printf("\nEnter sex(Male, Female, Other): ");
-    fgets(struct_ptr.sex, 8, stdin);
+    scanf("%[^\n]7s",struct_ptr.sex);
     if( !test_sex(struct_ptr.sex))
     {
         fclose(f_ptr);
