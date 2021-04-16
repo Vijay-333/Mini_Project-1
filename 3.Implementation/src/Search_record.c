@@ -43,7 +43,7 @@ int Search_record()
         if(!flag)
             printf("\nFile not found");
 
-        close(f_ptr);
+        fclose(f_ptr);
 
         printf("\nEnter any Key to Menu:");
         getchar();
