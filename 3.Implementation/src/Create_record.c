@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include "E:\Study\Mini-Project LTTS\Mini Project in C Phonebook\Implementation\inc\Phone_Header.h"
-#include "E:\Study\Mini-Project LTTS\Mini Project in C Phonebook\Implementation\inc\Test_Header.h"
+#include "Phone_Header.h"
+#include "Test_Header.h"
 
 int Create_record()
 {
