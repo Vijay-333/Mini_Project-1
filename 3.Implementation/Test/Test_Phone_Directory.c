@@ -1,5 +1,4 @@
 #include "Phone_Header.h"
-#include "Test_Header.h"
 #include "unity.h"
 
 /* Required by the unity test framework */
@@ -9,32 +8,32 @@ void tearDown(){}
 
 void test_create_record(void)
 {
-  TEST_ASSERT_EQUAL(1, create_record());
+  TEST_ASSERT_EQUAL(1, Create_record());
 }
 
 void test_delete_record(void)
 {
-  TEST_ASSERT_EQUAL(1, create_record());
-  TEST_ASSERT_EQUAL(1, delete_record());
+  TEST_ASSERT_EQUAL(1, Create_record());
+  TEST_ASSERT_EQUAL(1, Delete_record());
 }
 
 void test_modify_record(void)
 {
-  TEST_ASSERT_EQUAL(1, create_record());
-  TEST_ASSERT_EQUAL(1, modify_record());
-  TEST_ASSERT_EQUAL(1, delete_record());
+  TEST_ASSERT_EQUAL(1, Create_record());
+  TEST_ASSERT_EQUAL(1, Modify_record());
+  TEST_ASSERT_EQUAL(1, Delete_record());
 }
 
 void test_search_record(void)
 {
-  TEST_ASSERT_EQUAL(1, create_record());
-  TEST_ASSERT_EQUAL(1, search_record());
-  TEST_ASSERT_EQUAL(1, delete_record());
+  TEST_ASSERT_EQUAL(1, Create_record());
+  TEST_ASSERT_EQUAL(1, Search_record());
+  TEST_ASSERT_EQUAL(1, Delete_record());
 }
 
 void test_list_record(void)
 {
-  TEST_ASSERT_EQUAL(1, list_record());
+  TEST_ASSERT_EQUAL(1, Listing_record());
 }
 
 int main(void)
