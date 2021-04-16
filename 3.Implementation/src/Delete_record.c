@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include "E:\Study\Mini-Project LTTS\Mini Project in C Phonebook\Implementation\inc\Phone_Header.h"
+#include "Phone_Header.h"
 
 int Delete_record()
 {
