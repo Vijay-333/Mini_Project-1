@@ -4,7 +4,7 @@ TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
 BUILD_DIR = Build
 
-SRC = src/Create_record.c src/Delete_record.c src/Listing_record.c src/Modify_record.c src/Search_record.c src/Clear.c src/Test_address.c src/Test_Country_Code.c src/Test_Mobile.c src/Test_name.c src/Test_sex.c
+SRC = src/Create_record.c src/Delete_record.c src/Listing_record.c src/Modify_record.c src/Search_record.c src/Clear.c
 
 TEST_SRC = Test/Test_phone_directory.c\
 unity/unity.c\
