@@ -1,3 +1,4 @@
+[![CI](https://github.com/Vijay-333/Mini_Project-1/actions/workflows/main.yml/badge.svg)](https://github.com/Vijay-333/Mini_Project-1/actions/workflows/main.yml)
 # INTRODUCTION
 # Phone Directory
   This program is used as a general phone directory. In which, details of the customers are also included. Such features are:
